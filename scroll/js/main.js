@@ -1,3 +1,5 @@
+import smoothScrollTo from './modules/smoothScrollTo'
+
 const box1 = document.getElementById('box-1')
 const box2 = document.getElementById('box-2')
 const box3 = document.getElementById('box-3')
@@ -15,42 +17,18 @@ btn1.addEventListener('click', scrollToTarget.bind(null, box1))
 btn2.addEventListener('click', scrollToTarget.bind(null, box2))
 btn3.addEventListener('click', scrollToTarget.bind(null, box3))
 btn4.addEventListener('click', scrollToTarget.bind(null, box4))
-// btnTop.addEventListener('click', smoothScrollTo.bind(null, 0))
-btnTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth'})
-})
+btnTop.addEventListener('click', smoothScrollTo.bind(null, 0))
+
+// scrollTo의 behavior 속성을 이용해보려고 했는데 작동하지 않음
+// 더 연구할 필요가 있음
+
+// btnTop.addEventListener('click', () => {
+//     window.scrollTo({ top: 0, behavior: 'smooth'})
+// })
 btnBottom.addEventListener('click', smoothScrollTo.bind(
     null, document.body.scrollHeight
 ))
 btnNext.addEventListener('click', scrollToNext)
-/**
- * @param {Number} targetY - target scrollY position
- */
-function smoothScrollTo(targetY) {
-    let n = 1
-    if (window.scrollY > targetY) {
-        n = -1
-    }
-    let scrollInterval = setInterval(() => {
-        window.scrollBy(0, n)
-        console.log(`${window.scrollY} / ${targetY}`)
-        if (Math.abs(n)<60) {n += 0.5 * n}
-
-        /**
-         * 1. 타겟이 출발 위치보다 상단 && 현재 위치가 타겟 위치와 같거나 상단
-         * 2. 타겟이 출발 위치보다 하단 && 현재 위치가 타겟 위치와 같거나 하단
-         * 3. 타겟이 출발 위치보다 하단 && 현재 위치가 마지막 
-         */
-        if ( (n < 0 && window.scrollY <= targetY) |
-             (n > 0 && (
-                window.scrollY >= targetY) | 
-                window.scrollY >= document.body.scrollHeight-box1.offsetHeight-1) 
-            ) {
-            window.scrollTo(0, targetY)
-            clearInterval(scrollInterval)
-        }
-    }, 20)
-}
 
 /**
  * 
