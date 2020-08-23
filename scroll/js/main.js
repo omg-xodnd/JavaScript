@@ -1,4 +1,4 @@
-import smoothScrollTo from './modules/smoothScrollTo'
+import smoothScrollTo from './modules/scroll.js'
 
 const box1 = document.getElementById('box-1')
 const box2 = document.getElementById('box-2')
@@ -19,27 +19,20 @@ btn3.addEventListener('click', scrollToTarget.bind(null, box3))
 btn4.addEventListener('click', scrollToTarget.bind(null, box4))
 btnTop.addEventListener('click', smoothScrollTo.bind(null, 0))
 
-// scrollTo의 behavior 속성을 이용해보려고 했는데 작동하지 않음
-// 더 연구할 필요가 있음
-
-// btnTop.addEventListener('click', () => {
-//     window.scrollTo({ top: 0, behavior: 'smooth'})
-// })
 btnBottom.addEventListener('click', smoothScrollTo.bind(
     null, document.body.scrollHeight
 ))
 btnNext.addEventListener('click', scrollToNext)
-
 /**
  * 
- * @param {Element} target - target element you want to scroll to
+ * @param {Element} target - 이동하고자 하는 타겟 element
  */
 function scrollToTarget(target) {
     smoothScrollTo(target.offsetTop)
 }
 
 function scrollToNext() {
-    let h = box1.offsetHeight
+    let h = window.innerHeight
     smoothScrollTo(h * ((Math.floor((window.scrollY+1)/h)) + 1))
 }
 

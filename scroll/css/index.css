@@ -11,8 +11,10 @@ body {
 
 .box {
     height: 100vh;
-    font-size: 10rem;
+
     color: white;
+    font-size: 10rem;
+    text-shadow: 5px 5px 0px #333333;
 }
 
 #box-1 {
@@ -20,7 +22,7 @@ body {
 }
 
 #box-2 {
-    background: peru;
+    background: lightsalmon;
 }
 
 #box-3 {
@@ -28,7 +30,7 @@ body {
 }
 
 #box-4 {
-    background: #333333;
+    background: #555555;
 }
 
 .nav-box {
@@ -48,7 +50,7 @@ body {
 
     border-radius: 10px;
     background: white;
-    box-shadow: 3px 3px 3px #333333;
+    box-shadow: 5px 5px 0px #333333;
 
     font-weight: bolder;
     color: #333333;
