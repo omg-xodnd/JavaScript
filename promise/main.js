@@ -7,7 +7,6 @@ const doubleDigitTime = (time) => {
   return time < 10 ? '0' + time : time
 }
 
-// 
 const getTime = () => {
   let now = new Date()
   let hour = doubleDigitTime(now.getHours())
