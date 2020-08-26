@@ -1,0 +1,17 @@
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-btn {
+  margin: 40vh auto 0;
+  width: 200px;
+  height: 50px;
+  background: #63bba1;
+  color: white;
+}
+
+.start-btn:hover {
+  cursor: pointer;
+}
