@@ -1,7 +1,8 @@
+// HTML elements
 const wrap = document.getElementById("wrap")
 const startBtn = document.querySelector('.start-btn')
 
-
+// 시간을 두자릿수로 변환
 const doubleDigitTime = (time) => {
   return time < 10 ? '0' + time : time
 }
