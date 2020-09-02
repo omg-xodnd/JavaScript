@@ -3,16 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>0827 modal practice</title>
+  <title>0827 carousel practice</title>
   <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-  <div class="wrap">
-    <div class="crs-wrap">
-      <div class="crs-item">
-        <div id="crs-img-1" class="crs-img"></div>
-      </div>
+  <div style="margin-top: 10vh;"></div>
+  <!-- carousel -->
+  <div class="crsl-wrap">
+
+    
+    <div class="crsl-box flex-center">
+      <!-- arrow buttons -->
+      <div class="crsl-btn arrow-left"></div>
+
+      <!-- carousel items -->
+      <div class="crsl-item"></div>
+      <div class="crsl-item crsl-item-active"></div>
+      <div class="crsl-item"></div>
+
+      <div class="crsl-btn arrow-right"></div>
     </div>
+    <!-- dots -->
+    <div class="dots-box flex-center">
+      <div class="dots-item"></div>
+      <div class="dots-item dots-item-active"></div>
+      <div class="dots-item"></div>
+    </div>
+
+
   </div>
 </body>
 </html>
