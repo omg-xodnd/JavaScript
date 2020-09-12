@@ -1,3 +1,5 @@
+// 객체를 반환하는 함수 movie가 종료된 이후에도
+// return된 객체는 외부함수 movie의 변수 title = "madmax"에 여전히 접근할 수 있다
 
 function movie(title) {
   return {
@@ -10,9 +12,10 @@ function movie(title) {
   }
 }
 
-a = movie('madmax')
+madmax = movie('madmax')
 
-a.set_title("madmax: fury road")  
+console.log(madmax.get_title())
 
-console.log(a.get_title())
-console.log(a)
+madmax.set_title("madmax: fury road")  
+
+console.log(madmax.get_title())
