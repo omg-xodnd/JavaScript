@@ -1,28 +1,26 @@
-import smoothScrollTo from './modules/scroll.js'
+import { smoothScrollTo } from './modules/smoothScrollTo.js'
+import { hasScrolledDown, isCheckingScroll } from './modules/hasScrolledDown.js'
 
-const box1 = document.getElementById('box-1')
-const box2 = document.getElementById('box-2')
-const box3 = document.getElementById('box-3')
-const box4 = document.getElementById('box-4')
-
-const btn1 = document.getElementById('btn-1')
-const btn2 = document.getElementById('btn-2')
-const btn3 = document.getElementById('btn-3')
-const btn4 = document.getElementById('btn-4')
 const btnTop = document.getElementById('btn-top')
-const btnBottom = document.getElementById('btn-bottom')
-const btnNext = document.getElementById('btn-next')
-
-btn1.addEventListener('click', scrollToTarget.bind(null, box1))
-btn2.addEventListener('click', scrollToTarget.bind(null, box2))
-btn3.addEventListener('click', scrollToTarget.bind(null, box3))
-btn4.addEventListener('click', scrollToTarget.bind(null, box4))
 btnTop.addEventListener('click', smoothScrollTo.bind(null, 0))
 
+const btnBottom = document.getElementById('btn-bottom')
 btnBottom.addEventListener('click', smoothScrollTo.bind(
     null, document.body.scrollHeight
 ))
+
+const btnNext = document.getElementById('btn-next')
 btnNext.addEventListener('click', scrollToNext)
+
+for (let i = 1 ; i < 5 ; i++) {
+    let box = document.getElementById(`box-${i}`)
+    let btn = document.getElementById(`btn-${i}`)
+    btn.addEventListener('click', scrollToTarget.bind(null, box))
+}
+
+window.addEventListener('scroll', hideOnScroll)
+const header = document.getElementById('header')
+
 /**
  * 
  * @param {Element} target - 이동하고자 하는 타겟 element
@@ -36,3 +34,15 @@ function scrollToNext() {
     smoothScrollTo(h * ((Math.floor((window.scrollY+1)/h)) + 1))
 }
 
+function hideOnScroll() {
+    if (isCheckingScroll) { 
+        return
+    }
+    hasScrolledDown().then(res => {
+        if (res) {
+            header.classList.add('hide')
+        }else{
+            header.classList.remove('hide')
+        }
+    })
+}

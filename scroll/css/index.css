@@ -33,7 +33,7 @@ body {
     background: #555555;
 }
 
-.nav-box {
+#nav-box {
     position: fixed;
     bottom: 5vh;
     right: 5vw;
@@ -63,4 +63,24 @@ body {
     width: 120px;
     background: black;
     color: white;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 50px;
+    background: whitesmoke;
+    border-bottom: 1px solid grey;
+    color: black;
+    font-size: 2rem;
+    font-weight: bolder;
+    transition: 300ms;
+}
+
+.hide {
+    transition: 300ms;
+    opacity: 0;
 }
