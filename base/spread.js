@@ -5,7 +5,7 @@
   
   1. spread
   2. function call
-  2. object literal
+  2. spread in object literal
   2. deconstructuring assignment
   3. 
 
@@ -24,9 +24,25 @@ function spread() {
   )
 }
 
-// [spread with Array]
+// [2. spread in function call]
 {
+  const arr = [1, 2, 3]
+  const strArr = ['a', 'b', 'c']
+  function addUp(a, b, c) {
+    return a + b + c
+  }
 
+  function joinStr(...str) {
+    let result = ''
+    for (char of str) {
+      result += char
+    }
+    return result
+  }
+  
+  console.log(addUp(...arr))
+  console.log(addUp(...strArr))
+  console.log(joinStr(...'oops'))
 }
 
 
@@ -34,9 +50,6 @@ function spread() {
 [3. spread in object literal 객체 전개 연산자]
 - 원본 조작없는 객체 갱신을 위해 Object.assign() 대신 spread 사용하기
 - 객체를 전개하기 위해서는 항상 객체 리터럴 안에서 사용되어야 한다
-- 장점
-  코드의 의미를 더욱 명확하게 전달하여 가독성을 높일 수 있음.
-  새로운 객체를 반환하기 위해 부자연스러운 코드를 작성할 필요 없음.
 */
 function spreadObj() {
   const person = {
@@ -78,26 +91,56 @@ function spreadObj() {
 */
 
 {
-  const actions = {
-    greeting() {
-      console.log('hello')
-    },
-    eating() {
-      console.log('yummy')
+  const houseworkStore = {
+    actions: {
+      sweeping() {
+        console.log('I have LG cord Zero')
+      }
     }
   }
-  function mapActions(keyArray) {
+
+  const store = {
+    actions: {
+      greeting() {
+        console.log('hello')
+      },
+      eating() {
+        console.log('yummy')
+      }
+    },
+
+    modules: {
+      housework: houseworkStore,
+    }
+  }
+
+  function mapActions(a, b) {
+    const storeModule = b ? store.modules[a] : store
+    const keyList = b ? b : a
+
     const result = {}
-    keyArray.map(key => result[key] = actions[key])
+    if (keyList.constructor === Array) {
+      keyList.map(key => result[key] = storeModule.actions[key])
+    } else if (keyList.constructor === Object) {
+      for ([key, actionKey] of Object.entries(keyList)) {
+        result[key] = storeModule.actions[actionKey]
+      }
+    } else {
+      throw new Error('인자로 배열 또는 객체를 전달하세요')
+    }
     return result
   }
   
   const myActions = {
     ...mapActions(['greeting']),
+    ...mapActions({ yumyum: 'eating' }),
+    ...mapActions('housework', ['sweeping']),
     suspecting() {
       console.log('hmm')
     }
   }
 
   myActions.greeting()
+  myActions.yumyum()
+  myActions.sweeping()
 }

@@ -2,13 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8aea8ac5-ea2e-4ec4-bf6f-fc4e4fa4db77" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../HTML_CSS/grid/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML_CSS/grid/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../base/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../base/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../base/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../base/.idea/study.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../base/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../base/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../base/IIFE.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../base/async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../base/closure.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../base/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../base/let_const.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../base/promise/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../base/promise/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../base/promise/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../base/spread.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../image/css/index.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../image/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../image/js/main.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../promise/index.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../promise/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../promise/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scroll/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scroll/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scroll/html/intro.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scroll/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scroll/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scroll/js/modules/hasScrolledDown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scroll/js/modules/smoothScrollTo.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../study_samples/IIFE.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../study_samples/async.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../study_samples/closure.js" beforeDir="false" />
@@ -22,6 +46,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\taew0\Desktop\coding\2020.08\JavaScript\study\.idea" />
+      </set>
+    </option>
   </component>
   <component name="ProjectId" id="1i0Xl25EYcMJZagy95FjxT1H6y6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -55,7 +86,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
